@@ -22,4 +22,6 @@ const fn1 = (v: boolean, w: any) => v ? 1 : 2
 
 
 // ============= Your Code Here =============
-type MyReturnType<T> = any
+type MyReturnType<T extends (...arg: any) => any> = T extends (...arg: any) => infer R ? R : any
+
+type Result = MyReturnType<() => []>
