@@ -24,7 +24,8 @@ declare function PromiseAll<T extends readonly any[]>(values: readonly [...T]): 
   [P in keyof T]: T[P] extends Promise<infer U> ? U : T[P]
 }>
 
-const P = [Promise.resolve(3)] as const
+type test = typeof promiseAllTest1
+
 
 /**
  * 1. 'readonly' type modifier is only permitted on array and tuple.
